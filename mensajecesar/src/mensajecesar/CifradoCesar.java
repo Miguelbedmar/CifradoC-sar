@@ -3,7 +3,7 @@ package mensajecesar;
 import java.util.Scanner;
 
 public class CifradoCesar {
-	static Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in); 
 
 	public static void main(String[] args) {
 		// El programa utilizara algoritmo de cesar
@@ -11,7 +11,7 @@ public class CifradoCesar {
 	}
 
 	public String cifradoCesar(String text, int llave) {
-		StringBuilder cifrado = new StringBuilder(); // Creacion del StringBuilder
+		StringBuilder cifrado = new StringBuilder(); // Instancia  del StringBuilder
 		/*
 		 * Antes de nada en este caso no podemos utilizar un for Each ya que estamos
 		 * recorriendo texto que no es un array de texto si queremos recorrer texto
@@ -32,10 +32,13 @@ public class CifradoCesar {
 				int posOr = c - pie;
 				int posDesplazada = ((posOr + llave));
 				char letracod=(char) (pie+posDesplazada);
+				cifrado.append(letracod);
+			}else {
+				cifrado.append(c);
 			}
 
 		}
 
-		return "";
+		return cifrado.toString();
 	}
 }
